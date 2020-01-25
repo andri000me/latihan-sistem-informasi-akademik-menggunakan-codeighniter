@@ -21,6 +21,7 @@
                 <th>NIM</th>
                 <th>TANGGAL LAHIR</th>
                 <th>JURUSAN</th>
+                <th colspan="2">Aksi</th>
             </tr>
 
             <?php
@@ -32,6 +33,12 @@
                 <td><?= $mhs['nim']; ?></td>
                 <td><?= $mhs['tgl_lahir']; ?></td>
                 <td><?= $mhs['jurusan']; ?></td>
+                <td>
+                    <a href="<?= base_url('Mahasiswa/hapusDataMahasiswa/') . $mhs['id']; ?>" onclick="return confirm('Yakin ingin Menghapus Data ini');">
+                        <div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>
+                    </a>
+                    <div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>
+                </td>
             </tr>
             <?php endforeach; ?>
         </table>

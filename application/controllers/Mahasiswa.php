@@ -19,4 +19,10 @@ class Mahasiswa extends CI_Controller
         $this->Mahasiswa_model->tambahDataMahasiswa();
         redirect('Mahasiswa');
     }
+
+    public function hapusDataMahasiswa($id)
+    {
+        $this->Mahasiswa_model->hapusDataMahasiswa($id);
+        redirect('Mahasiswa');
+    }
 }
