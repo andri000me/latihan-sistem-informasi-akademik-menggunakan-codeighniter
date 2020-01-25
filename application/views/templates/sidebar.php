@@ -32,7 +32,7 @@
                   </a>
               </li>
               <li class="active treeview">
-                  <a href="#">
+                  <a href="<?= base_url('Mahasiswa'); ?>">
                       <i class="fa fa-graduation-cap"></i> <span>Mahasiswa</span>
                   </a>
               </li>
