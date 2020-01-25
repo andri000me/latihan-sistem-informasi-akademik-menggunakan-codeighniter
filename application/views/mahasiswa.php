@@ -37,7 +37,9 @@
                     <a href="<?= base_url('Mahasiswa/hapusDataMahasiswa/') . $mhs['id']; ?>" onclick="return confirm('Yakin ingin Menghapus Data ini');">
                         <div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>
                     </a>
-                    <div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>
+                    <a href="<?= base_url('Mahasiswa/ubahDataMahasiswa/') . $mhs['id']; ?>" onclick="return confirm('Yakin ingin Mengubah Data ini');">
+                        <div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>
+                    </a>
                 </td>
             </tr>
             <?php endforeach; ?>

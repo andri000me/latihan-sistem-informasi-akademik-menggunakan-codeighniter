@@ -25,4 +25,22 @@ class Mahasiswa extends CI_Controller
         $this->Mahasiswa_model->hapusDataMahasiswa($id);
         redirect('Mahasiswa');
     }
+
+    public function ubahDataMahasiswa($id)
+    {
+        $data['judul'] = 'Halaman Ubah Data Mahasiswa';
+        $data['mahasiswa'] = $this->Mahasiswa_model->getAllDataMahasiswaById($id);
+
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('edit', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $this->Mahasiswa_model->ubahDataMahasiswa();
+            redirect('Mahasiswa');
+        }
+    }
 }
