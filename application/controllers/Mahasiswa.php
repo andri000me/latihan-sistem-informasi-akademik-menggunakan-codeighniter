@@ -66,4 +66,20 @@ class Mahasiswa extends CI_Controller
 
         $this->load->view('print_mahasiswa', $data);
     }
+
+    public function pdf()
+    {
+        $data['mahasiswa'] = $this->Mahasiswa_model->getAllDataMahasiswa();
+
+        $this->load->view('laporan_pdf', $data);
+
+        $paper_size = 'A4';
+        $orientation = 'landscape';
+        $html = $this->output->get_output();
+        $this->dompdf->set_paper($paper_size, $orientation, $html);
+
+        $this->dompdf->load_html($html);
+        $this->dompdf->render();
+        $this->dompdf->stream("laporan_mahasiswa.pdf", ['Attachment' => 0]);
+    }
 }

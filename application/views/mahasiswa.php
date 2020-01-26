@@ -17,6 +17,8 @@
 
         <a href="<?= base_url('Mahasiswa/print'); ?>" class="btn btn-primary"><i class="fa fa-print"> Print</i></a>
 
+        <a href="<?= base_url('Mahasiswa/pdf'); ?>" class="btn btn-warning"><i class="fa fa-file"> Export PDF</i></a>
+
         <table class="table">
             <tr>
                 <th>NO</th>
