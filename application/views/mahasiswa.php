@@ -15,9 +15,18 @@
     <section class="content">
         <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i> Tambah Data Mahasiswa</button>
 
-        <a href="<?= base_url('Mahasiswa/print'); ?>" class="btn btn-primary"><i class="fa fa-print"> Print</i></a>
+        <a href="<?= base_url('Mahasiswa/print'); ?>" class="btn btn-danger"><i class="fa fa-print"> Print</i></a>
 
-        <a href="<?= base_url('Mahasiswa/pdf'); ?>" class="btn btn-warning"><i class="fa fa-file"> Export PDF</i></a>
+        <div class="dropdown inline">
+            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu1" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                <i class="fa fa-download"></i>Export
+                <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="<?= base_url('Mahasiswa/pdf'); ?>">PDF</a></li>
+                <li><a href="<?= base_url('Mahasiswa/excel'); ?>">EXCEL</a></li>
+            </div>
+        </div>
 
         <table class="table">
             <tr>
