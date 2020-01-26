@@ -35,6 +35,11 @@
                 <th>No Telp</th>
                 <td><?= $mahasiswa['no_telp']; ?></td>
             </tr>
+            <tr>
+                <td>
+                    <img src="<?= base_url('assets/imgDataMahasiswa/') . $mahasiswa['foto']; ?>" alt="" width="90px" height="110px">
+                </td>
+            </tr>
         </table>
         <a href="<?= base_url('mahasiswa'); ?>" class="btn btn-primary">Kembali</a>
     </section>

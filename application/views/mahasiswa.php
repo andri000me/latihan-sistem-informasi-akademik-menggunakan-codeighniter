@@ -60,7 +60,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?= base_url('Mahasiswa/tambahDataMahasiswa'); ?>" method="post">
+                    <form action="<?= base_url('Mahasiswa/tambahDataMahasiswa'); ?>" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="">Nama Mahasiswa</label>
                             <input type="text" name="nama" class="form-control">
@@ -94,6 +94,10 @@
                         <div class="form-group">
                             <label for="">No Telp</label>
                             <input type="text" name="no_telp" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Upload Foto</label>
+                            <input type="file" name="foto" class="form-control">
                         </div>
                 </div>
                 <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>

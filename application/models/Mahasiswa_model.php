@@ -22,10 +22,26 @@ class Mahasiswa_model extends CI_Model
             'jurusan' => $this->input->post('jurusan'),
             'alamat' => htmlspecialchars($this->input->post('alamat', true)),
             'email' => htmlspecialchars($this->input->post('email', true)),
-            'no_telp' => htmlspecialchars($this->input->post('no_telp', true))
+            'no_telp' => htmlspecialchars($this->input->post('no_telp', true)),
+            'foto' => $this->_uploadGambar()
         ];
 
         $this->db->insert('tb_mahasiswa', $data);
+    }
+
+    private function _uploadGambar()
+    {
+        $config['upload_path']          = './assets/imgDataMahasiswa/';
+        $config['allowed_types']        = 'jpeg|jpg|png|gif';
+        $config['max_size']             = '5000';
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('foto')) {
+            return $this->upload->data('file_name');
+        } else {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '</div>');
+        }
     }
 
     public function ubahDataMahasiswa()
