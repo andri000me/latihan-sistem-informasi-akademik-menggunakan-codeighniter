@@ -61,4 +61,12 @@ class Mahasiswa_model extends CI_Model
     {
         $this->db->delete('tb_mahasiswa', ['id' => $id]);
     }
+
+    public function cariDataMahasiswa()
+    {
+        $keyword = $this->input->post('keyword', true);
+        $this->db->like('nama', $keyword);
+
+        return $this->db->get('tb_mahasiswa')->result_array();
+    }
 }

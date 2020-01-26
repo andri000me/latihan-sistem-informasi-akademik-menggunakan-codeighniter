@@ -22,10 +22,17 @@
                 <i class="fa fa-download"></i>Export
                 <span class="caret"></span>
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a href="<?= base_url('Mahasiswa/pdf'); ?>">PDF</a></li>
                 <li><a href="<?= base_url('Mahasiswa/excel'); ?>">EXCEL</a></li>
-            </div>
+            </ul>
+        </div>
+
+        <div class="navbar-form navbar-right">
+            <?= form_open() ?>
+            <input type="text" name="keyword" class="form-control" placeholder="search">
+            <button type="submit" class="btn btn-success">Cari</button>
+            <?= form_close() ?>
         </div>
 
         <table class="table">
