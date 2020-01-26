@@ -14,6 +14,9 @@
 
     <section class="content">
         <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i> Tambah Data Mahasiswa</button>
+
+        <a href="<?= base_url('Mahasiswa/print'); ?>" class="btn btn-primary"><i class="fa fa-print"> Print</i></a>
+
         <table class="table">
             <tr>
                 <th>NO</th>

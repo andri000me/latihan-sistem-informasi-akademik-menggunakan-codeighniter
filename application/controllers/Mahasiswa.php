@@ -59,4 +59,11 @@ class Mahasiswa extends CI_Controller
         $this->load->view('detail', $data);
         $this->load->view('templates/footer');
     }
+
+    public function print()
+    {
+        $data['mahasiswa'] = $this->Mahasiswa_model->getAllDataMahasiswa();
+
+        $this->load->view('print_mahasiswa', $data);
+    }
 }
