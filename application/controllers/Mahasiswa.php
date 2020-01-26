@@ -32,6 +32,11 @@ class Mahasiswa extends CI_Controller
         $data['mahasiswa'] = $this->Mahasiswa_model->getAllDataMahasiswaById($id);
 
         $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('nim', 'Nim', 'required');
+        $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required');
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('no_telp', 'No Telp', 'required');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
@@ -42,5 +47,16 @@ class Mahasiswa extends CI_Controller
             $this->Mahasiswa_model->ubahDataMahasiswa();
             redirect('Mahasiswa');
         }
+    }
+
+    public function detailDataMahasiswa($id)
+    {
+        $data['judul'] = 'Halaman Detail';
+        $data['mahasiswa'] = $this->Mahasiswa_model->getAllDataMahasiswaById($id);
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('detail', $data);
+        $this->load->view('templates/footer');
     }
 }

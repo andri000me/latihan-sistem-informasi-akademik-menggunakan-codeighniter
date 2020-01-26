@@ -34,6 +34,9 @@
                 <td><?= $mhs['tgl_lahir']; ?></td>
                 <td><?= $mhs['jurusan']; ?></td>
                 <td>
+                    <a href="<?= base_url('Mahasiswa/detailDataMahasiswa/') . $mhs['id']; ?>">
+                        <div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>
+                    </a>
                     <a href="<?= base_url('Mahasiswa/hapusDataMahasiswa/') . $mhs['id']; ?>" onclick="return confirm('Yakin ingin Menghapus Data ini');">
                         <div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>
                     </a>
@@ -61,6 +64,7 @@
                         <div class="form-group">
                             <label for="">Nama Mahasiswa</label>
                             <input type="text" name="nama" class="form-control">
+                            <?= form_error('tgl_lahir', '<div class="text-small text-danger">', '</div>') ?>
                         </div>
                         <div class="form-group">
                             <label for="">NIM</label>
@@ -78,6 +82,18 @@
                                 <option>Tehknik Komputer Jaringan</option>
                                 <option>Tehknik Bisnis Sepeda Montor</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Alamat</label>
+                            <input type="text" name="alamat" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="text" name="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">No Telp</label>
+                            <input type="text" name="no_telp" class="form-control">
                         </div>
                 </div>
                 <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
