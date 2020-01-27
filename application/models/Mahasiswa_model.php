@@ -35,7 +35,7 @@ class Mahasiswa_model extends CI_Model
         $config['allowed_types']        = 'jpeg|jpg|png|gif';
         $config['max_size']             = '5000';
 
-        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
 
         if ($this->upload->do_upload('foto')) {
             return $this->upload->data('file_name');
@@ -50,11 +50,26 @@ class Mahasiswa_model extends CI_Model
             'nama' => htmlspecialchars($this->input->post('nama', true)),
             'nim' => htmlspecialchars($this->input->post('nim', true)),
             'tgl_lahir' => htmlspecialchars($this->input->post('tgl_lahir', true)),
-            'jurusan' => $this->input->post('jurusan')
+            'jurusan' => $this->input->post('jurusan'),
+            'alamat' => htmlspecialchars($this->input->post('alamat', true)),
+            'email' => htmlspecialchars($this->input->post('email', true)),
+            'no_telp' => htmlspecialchars($this->input->post('no_telp', true)),
+            'foto' => $this->_ubahUploadGambar()
         ];
 
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('tb_mahasiswa', $data);
+    }
+
+    private function _ubahUploadGambar()
+    {
+        if (empty($_FILES['foto']['name'])) {
+            $gambar = $this->input->post('gambarLama');
+        } else {
+            $gambar = $this->_uploadGambar();
+        }
+
+        return $gambar;
     }
 
     public function hapusDataMahasiswa($id)

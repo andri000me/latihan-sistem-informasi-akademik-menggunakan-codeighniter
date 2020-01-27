@@ -21,12 +21,14 @@ class Mahasiswa extends CI_Controller
     public function tambahDataMahasiswa()
     {
         $this->Mahasiswa_model->tambahDataMahasiswa();
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">Data Berhasil Ditambahkan<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         redirect('Mahasiswa');
     }
 
     public function hapusDataMahasiswa($id)
     {
         $this->Mahasiswa_model->hapusDataMahasiswa($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Data Mobil Berhasil Dihapus<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         redirect('Mahasiswa');
     }
 
@@ -49,6 +51,7 @@ class Mahasiswa extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $this->Mahasiswa_model->ubahDataMahasiswa();
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Data Mahasiswa Berhasil Diubah<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
             redirect('Mahasiswa');
         }
     }

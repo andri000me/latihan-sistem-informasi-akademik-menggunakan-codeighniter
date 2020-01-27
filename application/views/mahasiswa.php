@@ -1,15 +1,6 @@
-<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>
-            Data Mahasiswa
-            <small>Control panel</small>
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Data Mahasiswa</li>
-        </ol>
+        <h1>Data Mahasiswa</h1>
     </section>
 
     <section class="content">
@@ -34,6 +25,8 @@
             <button type="submit" class="btn btn-success">Cari</button>
             <?= form_close() ?>
         </div>
+
+        <?= $this->session->flashdata('message'); ?>
 
         <table class="table">
             <tr>
@@ -70,7 +63,6 @@
         </table>
     </section>
 
-    <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

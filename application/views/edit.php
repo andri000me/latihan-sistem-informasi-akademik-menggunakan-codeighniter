@@ -41,6 +41,11 @@
                 <input type="text" name="no_telp" class="form-control" value="<?= $mahasiswa['no_telp']; ?>">
                 <?= form_error('no_telp', '<div class="text-small text-danger">', '</div>') ?>
             </div>
+            <div class="form-group">
+                <img src="<?= base_url('assets/imgDataMahasiswa/') . $mahasiswa['foto']; ?>" alt="" width="90px" height="110px">
+                <input type="hidden" name="gambarLama" value="<?= $mahasiswa['foto']; ?>">
+                <input type="file" name="foto" class="form-control">
+            </div>
             <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
